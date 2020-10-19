@@ -18,15 +18,33 @@
       <ul>
         <li><a class="menuLink" href="index.html">Home</a></li>
         <li><a class="menuLink" href="sample-01.html">Sample-01</a></li>
-        <li><a class="menuLink" href="#">Sample-02</a></li>
+        <li><a class="menuLink" href="Sample-02">Sample-02</a></li>
         <li><a class="menuLink" href="#">Sample-03</a></li>
         <li><a class="menuLink" href="#">Sample-04</a></li>
       </ul>
     </nav>
     <Section id = "caddoc">
-        <div class ="side-doc"></div>     
-        <div class ="main-doc">  
+            <div class ="side-doc"></div>     
+            <div class ="main-doc">
+              <b><h3>Feature 이름 및 치수 표시</b>
+              <button class="styled" type="button" onclick="testDimensions ()">-클릭!-</button>
+            </dvi>      
     </Section>
+    <script>
+      function testDimensions () {
+      const session = pfcGetCurrentSession ();
+      const model = session.GetActiveModel ();
+      print (`Model: ${model.FileName}`)
+      if (model) {
+        for (const dim of model.ListItems (pfcModelItemType.ITEM_DIMENSION)) {
+          print (`<b>${dim.Symbol}</b> = ${JSON.stringify (dim.DimValue)}`)
+        }
+      }
+      else {
+        Browser.alert ('Error: missing active model. Please open or create a model and rerun the test.')
+      }
+    }
+    </script>
       
   </body>
 </html>
