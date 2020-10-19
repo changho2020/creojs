@@ -5,6 +5,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">  
   <title>CADtools Dev !</title>
+  <script src="creojs.js"></script>
+        <script type="text/creojs">
+            function getActiveModelName () {
+                const model = pfcGetCurrentSession ().GetActiveModel ()
+                if (!model) throw "No Active Model"
+                return pfcGetCurrentSession ().GetActiveModel ().FileName;
+            }
+        </script>
 </head>
   <body>
     <header id = "top">
@@ -25,12 +33,20 @@
     </nav>
     <Section id = "caddoc">
         <div class ="side-doc"></div>     
-        <div class ="main-doc"> 
-               <p><h2>주요 기능</h2></p>
-               <p> lsa;dl'asld'lsad'lasdla'salkksdkfkd;skf </p>
-        </div>
-       
+        <div class ="main-doc">
+        <b><h3>Active model 이름 표시 하기</b></h3><span id="MODELNAME"></span><br>
+         <button class="styled" type="button" onclick="populateActiveModelName ()">-클릭!-</button>
+           </dvi>      
     </Section>
-      
+    <dvi>
+
+     <script>
+        function populateActiveModelName () {
+         CreoJS.getActiveModelName ()
+         .then (function (name) {
+         MODELNAME.innerHTML = name;
+                    })
+            }
+        </script>  
   </body>
 </html>
