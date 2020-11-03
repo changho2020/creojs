@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <script> src="creojs.js"></script>
+ 
+</head>
+<body>
+        <b><h3>Active model 이름 표시 하기</b></h3>
+        <button type="button" onclick="displayDimensions()">Click Me!</button>
+
+      <script>
+          function displayDimensions(){
+          const session = pfcGetCurrentSession ();
+          const model = session.GetActiveModel ();
+          print (`Model: ${model.FileName}`)
+          if (model) {
+            for (const dim of model.ListItems (pfcModelItemType.ITEM_DIMENSION)) {
+              print (`<b>${dim.Symbol}</b> = ${JSON.stringify (dim.DimValue)}`)
+            }
+          }
+          else {
+            Browser.alert ('Error: missing active model. Please open or create a model and rerun the test.')
+          }
+        }
+      </script>
+</body>
+</html>
