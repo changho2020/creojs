@@ -2,33 +2,41 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/style.css">  
   <title>CADtools Dev !</title>
 </head>
   <body>
     <header>
-      <div id ="loginArea">
-         <span><i class="fas fa-sign-in-alt"></i> Login</span>&nbsp;
-         <span><i class="fas fa-question-circle"></i> Help</span>&nbsp;
-         <span><i class="fas fa-flag-checkered"></i> KOR</span>&nbsp; 
-         <span><i class="fas fa-flag-usa"></i> ENG</span>&nbsp;
-       </div>
-    </header>
-    <div id="logoArea">
-      <div id="cadToolsLogo">
+      <div class = "topLayer">
+        <div class = "loginLayer">
+          <ul>
+            <li><a href="#"><i class="far fa-arrow-alt-circle-right"></i> Login</a></li>
+            <li><a href="#"><i class="far fa-address-book"></i> 회원가입</a></li>
+            <li><a href="#"><i class="far fa-calendar"></i> About</a></li>
+          </ul>
+        </div>
+      </div>
 
-      </div>
-      <div id="welcomText">
-        <p style="font-size:16px; font-weight:bold">'Creo 자동화 유틸리티 프로그램</p>
-        <p style="font-size:12px">편리한 라이브러리 검색, 3D 자동 설계, 설계 검증 등 다량한 프로그램 제공</p>
-        <P style="font-size:12px">WEB에 연결만 하면 설치 끝, 재 설치 없이 자동으로 프로그램 업데이트 . . . .</P>
-      </div>
-    </div>
-    <section>
-      
-    </section>
-    
+      <div class = "cadTools">
+           <img src="img/pic_trulli.jpg" alt="Trulli" width="120" height="90">
+           <div class = "welcomText">
+             <p style="font-size: 35px;">
+                  Creo를 위한 자동화 도구 CADTools!
+             </p>
+             <p>
+                  라이브러리 관리, UDF 관리, Part List / BOM 변환
+             </p>
+             <p>
+                  요소 설계 자동화, Template 설계, 설계 검증 체크 등...
+             </p>
+           </div>
+      </div> 
+    </header>
+       
+    <video width="100%" src="mp4/Design - 48420.mp4" controls autoplay muted loop></video>
+
+
   </body>
 </html>
