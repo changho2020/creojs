@@ -41,3 +41,12 @@ nav {
 .cadtoolsMenu > li ul.subMenu > li:hover {
   background: rgba(29, 60, 160, 0.678);
 }
+
+iframe {
+  width: 1200px;
+  height: 600px;
+  position: relative;
+  overflow-x: hidden;
+  left: 200px;
+  border: hidden;
+}

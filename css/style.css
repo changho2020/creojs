@@ -53,10 +53,20 @@ img {
   left: 200px;
   top: 15px;
   border-radius: 5px;
+  background-size: cover;
 }
 .welcomText {
   position: relative;
   left: 350px;
   bottom: 80px;
   color: #fff;
+}
+
+section {
+  position: relative;
+  width: 1000px;
+  height: 700px;
+  top: 20px;
+  left: 400px;
+  border: solid 1px red;
 }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Model Name</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <script src="../scripts/creojs.js"></script>
+    <script type="text/creojs">
+            function getActiveModelName () {
+                const model = pfcGetCurrentSession ().GetActiveModel ()
+                if (!model) throw "No Active Model"
+                return pfcGetCurrentSession ().GetActiveModel ().FileName;
+            }
+    </script>
+    <style>
+        section {
+            width: 600PX;
+            height: 150PX;
+            position: relative;
+            left: 300px;
+            top: 50px;
+        }
+        .buttonMenu{
+            position: relative;
+            left: 20px;
+        }
+
+        #MODELNAME {
+            position: relative;
+            left: 140px;
+            top: -42px;
+            width: 200px;
+            height: 10px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <b><i class="fab fa-artstation"></i> Active Model:</b><br><br>
+        <span id="MODELNAME"></span><br>
+        <button class = "buttonMenu" onclick="populateActiveModelName ()"> 클릭!</button>
+    </section>
+        <script>
+            function populateActiveModelName () {
+                CreoJS.getActiveModelName ()
+                    .then (function (name) {
+                        MODELNAME.innerHTML = name;
+                    })
+            }
+        </script>
+</body>
+</html>
