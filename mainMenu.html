@@ -63,7 +63,7 @@
           <li class = "menu5"><a href="#"> <i class="far fa-list-alt"></i> Part-List & BOM </a></li>
           <li class = "menu6"><a href="#"> <i class="fas fa-tools"></i> Utility <i class="fas fa-caret-down"></i></a>
               <ul class = "menu6_s subMenu">
-                <li><a href="creo-html/active_model_name.html" target="activemodelname">Active Model Name</a></li>
+                <li><a href="#" onclick="activeIframe()">Active Model Name</a></li>
                 <li><a href="#">Utility 2</a></li>
                 <li><a href="#">Utility 3</a></li>
               </ul>
@@ -71,5 +71,18 @@
         </ul>
     </nav> 
   </body>
-  <iframe src="creo-html/active_model_name.html" name = "activemodelname" id = "activemodelname" title="iframe Example 1" ></iframe>
+  <iframe style="display: none;" src="creo-html/active_model_name.html" name = "activemodelname" id = "activemodelname" title="iframe Example 1" ></iframe>
+  
+  <script>
+    // iFrame 보이기
+    function activeIframe(e) {
+      if (document.getElementById("activemodelname").style.display == 'none') {
+        document.getElementById("activemodelname").style.display = 'block';
+      }
+      else {
+        document.getElementById("activemodelname").style.display = 'none';
+      }
+    }
+  </script>
+
 </html>
